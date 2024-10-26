@@ -69,10 +69,12 @@ def predict_naive_bayes(model, text):
 st.markdown(
     """
     <style>
-    .reportview-container {
+    body {
         background: linear-gradient(135deg, #ff7e5f, #feb47b);
-        height: 100vh;
         color: white;
+    }
+    .reportview-container {
+        background: transparent; /* Đảm bảo không có màu nền khác */
     }
     </style>
     """,
