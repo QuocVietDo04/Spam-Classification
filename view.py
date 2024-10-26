@@ -24,14 +24,14 @@ def train_naive_bayes(spam_texts, ham_texts):
                 word_counts[word] += 1
                 total_words += 1
         return word_counts, total_words
-    
+
     spam_counts, spam_total = calculate_word_frequencies(spam_texts)
     ham_counts, ham_total = calculate_word_frequencies(ham_texts)
     vocab = set(spam_counts.keys()).union(set(ham_counts.keys()))
-    
+
     p_spam = len(spam_texts) / (len(spam_texts) + len(ham_texts))
     p_ham = len(ham_texts) / (len(spam_texts) + len(ham_texts))
-    
+
     return {
         'spam_counts': spam_counts,
         'ham_counts': ham_counts,
@@ -65,6 +65,20 @@ def predict_naive_bayes(model, text):
 
     return "Spam" if spam_prob > ham_prob else "Ham"
 
+# Bước 4: Thêm CSS cho nền gradient
+st.markdown(
+    """
+    <style>
+    .reportview-container {
+        background: linear-gradient(135deg, #ff7e5f, #feb47b);
+        height: 100vh;
+        color: white;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 # Tạo giao diện Streamlit
 st.title("Spam Classifier")
 st.write("Nhập nội dung tin nhắn hoặc email để kiểm tra xem có phải thư rác không:")
@@ -82,4 +96,3 @@ user_input = st.text_area("Nhập nội dung ở đây:")
 if st.button("Dự đoán"):
     prediction = predict_naive_bayes(model, user_input)
     st.write(f"Kết quả: **{prediction}**")
-
