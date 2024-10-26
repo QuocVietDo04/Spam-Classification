@@ -70,7 +70,7 @@ st.markdown(
     """
     <style>
     .reportview-container {
-        background: linear-gradient(135deg, #ff7e5f, #feb47b) !important;
+        background: linear-gradient(135deg, #ff7e5a, #feb47b) !important;
         color: white !important;
         height: 100vh !important;
     }
