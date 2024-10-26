@@ -65,23 +65,6 @@ def predict_naive_bayes(model, text):
 
     return "Spam" if spam_prob > ham_prob else "Ham"
 
-# Bước 4: Thêm CSS cho nền gradient
-st.markdown(
-    """
-    <style>
-    .reportview-container {
-        background: linear-gradient(135deg, #ff7e5a, #feb47b) !important;
-        color: white !important;
-        height: 100vh !important;
-    }
-    .css-18ni7ap.e1fqkh3o1 {
-        background-color: transparent !important; /* Đảm bảo không có màu nền khác */
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
 # Tạo giao diện Streamlit
 st.title("Spam Classifier")
 st.write("Nhập nội dung tin nhắn hoặc email để kiểm tra xem có phải thư rác không:")
