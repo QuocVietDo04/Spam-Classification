@@ -2,10 +2,10 @@ import streamlit as st
 import pickle
 
 # Tải mô hình và vectorizer
-with open('path/to/your/svm_model.pkl', 'rb') as f:
+with open('svm_model.pkl', 'rb') as f:
     svm = pickle.load(f)
 
-with open('path/to/your/vectorizer.pkl', 'rb') as f:
+with open('vectorizer.pkl', 'rb') as f:
     vectorizer = pickle.load(f)
 
 # Giao diện Streamlit
