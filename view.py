@@ -1,9 +1,12 @@
 import streamlit as st
-import joblib
+import pickle
 
 # Tải mô hình và vectorizer
-svm = joblib.load('model.joblib')
-vectorizer = joblib.load('vectorizer.joblib')
+with open('model.pkl', 'rb') as f:
+    svm = pickle.load(f)
+
+with open('vectorizer.pkl', 'rb') as f:
+    vectorizer = pickle.load(f)
 
 # Giao diện Streamlit
 st.title("Spam Classifier")
